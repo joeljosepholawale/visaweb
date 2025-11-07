@@ -39,3 +39,6 @@ yarn-error.log*
 
 # Build artifacts
 *.tgz
+
+# Documentation (optional - exclude if not needed in repo)
+*.md
