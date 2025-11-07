@@ -1,8 +1,9 @@
 import React from 'react'
 import { SEC_QUESTIONS } from '../data/sections.js'
 
-export default function PreviewPage({ model, signatureDataUrl, onBack, onSubmit, isSubmitting }){
+export default function PreviewPage({ model = {}, signatureDataUrl, onBack, onSubmit, isSubmitting }){
   const renderValue = (value) => {
+    if (!value) return <span style={{color: '#9ca3af', fontStyle: 'italic'}}>Not provided</span>
     if (Array.isArray(value)) {
       return value.filter(item => item && item.trim()).map((item, i) => <div key={i}>• {item}</div>)
     }
