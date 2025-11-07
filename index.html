@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visa Application Portal</title>
+<link rel="stylesheet" href="./landing.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="wind-bg"></div>
+    <div class="content">
+      <h1>Visa Application</h1>
+      <p class="subtitle">Fill, review, and submit your travel visa details securely</p>
+      <div class="buttons">
+        <button class="btn ds160" onclick="openModal('ds160')">
+         
+          <div>
+            <div class="btn-title">Applicant Data Capture</div>
+            <div class="btn-desc">U.S. Nonimmigrant Visa</div>
+          </div>
+        </button>
+        <button class="btn schengen" onclick="openModal('schengen')">
+         
+          <div>
+            <div class="btn-title">Schengen Visa</div>
+            <div class="btn-desc">European Union Application</div>
+          </div>
+        </button>
+        <button class="btn canada" onclick="openModal('canada')">
+         
+          <div>
+            <div class="btn-title">Canada Visa</div>
+            <div class="btn-desc">Canadian Visa Application</div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="captchaModal">
+    <div class="modal-content">
+      <h3>🔒 Security Verification</h3>
+      <p>Slide to verify you're human</p>
+      
+      <div class="slider-captcha">
+        <input type="range" id="captchaSlider" min="0" max="100" value="0">
+      </div>
+      <div class="captcha-status" id="captchaStatus"></div>
+
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+        <button class="btn-primary" id="verifyBtn" disabled onclick="verifyCaptcha()">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedForm = null;
+    let captchaVerified = false;
+    const TARGET_VALUE = 95;
+
+    function openModal(formType){
+      selectedForm = formType;
+      captchaVerified = false;
+      document.getElementById('captchaModal').classList.add('active');
+      document.getElementById('captchaSlider').value = 0;
+      document.getElementById('captchaStatus').textContent = '';
+      document.getElementById('captchaStatus').className = 'captcha-status';
+      document.getElementById('verifyBtn').disabled = true;
+      updateSliderBackground(0);
+    }
+
+    function closeModal(){
+      document.getElementById('captchaModal').classList.remove('active');
+      selectedForm = null;
+      captchaVerified = false;
+    }
+
+    function updateSliderBackground(value){
+      const slider = document.getElementById('captchaSlider');
+      const percentage = (value / 100) * 100;
+      const color = percentage >= TARGET_VALUE ? '#059669' : '#7aa2ff';
+      slider.style.background = `linear-gradient(to right, ${color} ${percentage}%, #e5e7eb ${percentage}%)`;
+    }
+
+    document.getElementById('captchaSlider').addEventListener('input', function(e){
+      const value = parseInt(e.target.value);
+      updateSliderBackground(value);
+      
+      const statusEl = document.getElementById('captchaStatus');
+      const verifyBtn = document.getElementById('verifyBtn');
+      
+      if (value >= TARGET_VALUE){
+        statusEl.textContent = '✓ Verified!';
+        statusEl.className = 'captcha-status success';
+        verifyBtn.disabled = false;
+        captchaVerified = true;
+      } else {
+        statusEl.textContent = `Slide to ${TARGET_VALUE}% or more...`;
+        statusEl.className = 'captcha-status error';
+        verifyBtn.disabled = true;
+        captchaVerified = false;
+      }
+    });
+
+    function verifyCaptcha(){
+      if (!captchaVerified){
+        alert('Please complete the verification first.');
+        return;
+      }
+
+      if (selectedForm === 'ds160'){
+        window.location.href = 'onlineapplication.html';
+      } else if (selectedForm === 'schengen'){
+        window.location.href = 'schengen.html';
+      } else if (selectedForm === 'canada'){
+        window.location.href = 'canada.html';
+      }
+      
+      closeModal();
+    }
+
+    document.getElementById('captchaModal').addEventListener('click', function(e){
+      if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+export const REQUIRED = ['surname','givenNames','sex','maritalStatus','dob','birthCity','birthCountry','nationality','homeStreet','homeCity','homeState','homePostal','homeCountry','mailingSame','primaryPhone','email','passportNumber','passportIssuingCountry','passportIssueCity','passportIssueCountry','passportIssueDate','passportExpiryDate','purposeOfTrip','hasSpecificPlans','beenToUS','usVisaIssued','studiedSecondaryUp','hasCompanions','asGroup'];
+
+export const SEC_QUESTIONS = [
+  "Do you have a communicable disease of public health significance?",
+  "Do you have a mental or physical disorder that poses a threat to yourself or others?",
+  "Are you or have you ever been a drug abuser or addict?",
+  "Have you ever been arrested or convicted for any offense or crime?",
+  "Have you ever violated or engaged in a conspiracy to violate any law relating to controlled substances?",
+  "Are you seeking to engage in or have you ever engaged in terrorist activities?",
+  "Have you ever or do you intend to provide financial assistance or support to terrorists?",
+  "Are you a member of or affiliated with a terrorist organization?",
+  "Have you ever ordered, incited, committed, assisted, or otherwise participated in genocide?",
+  "Have you ever committed, ordered, incited, assisted, or otherwise participated in torture?",
+  "Have you ever committed, ordered, incited, assisted, or otherwise participated in extrajudicial killings, political killings, or other acts of violence?",
+  "Have you ever engaged in the recruitment or the use of child soldiers?",
+  "Have you, while serving as a government official, been responsible for or directly carried out particularly severe violations of religious freedom?",
+  "Are you the spouse, son, or daughter of an individual who has been involved in trafficking in persons and have you, within the last five years, knowingly benefitted from the trafficking activities?",
+  "Do you seek to enter the United States to engage in prostitution or unlawful commercialized vice or have you been engaged in prostitution or procuring (or attempting to procure) prostitutes within the past 10 years?",
+  "Have you ever been involved in money laundering?",
+  "Have you ever committed or conspired to commit a human trafficking offense in the United States or outside the United States?",
+  "Have you ever knowingly aided, abetted, assisted, or colluded with a human trafficker?",
+  "Are you the spouse, son, or daughter of an individual who has committed or conspired to commit a human trafficking offense and have you, within the last five years, knowingly benefitted from the trafficking activities?",
+  "Have you ever engaged in the illicit trafficking of firearms, explosives, or other weapons?",
+  "Have you ever been removed or deported from the United States?",
+  "Have you ever overstayed a previous U.S. visa or violated the terms of a U.S. visa?",
+  "Have you ever sought to obtain or assist others to obtain a visa, entry into the United States, or any other U.S. immigration benefit by fraud or willful misrepresentation or other unlawful means?",
+  "Have you ever withheld custody of a U.S. citizen child outside the United States from a person granted legal custody by a U.S. court?",
+  "Have you ever voted in the United States in violation of any law or regulation?",
+  "Have you ever renounced United States citizenship for the purpose of avoiding taxation?"
+];
