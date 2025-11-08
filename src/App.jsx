@@ -474,6 +474,7 @@ export default function App(){
   const [submissionResult, setSubmissionResult] = useState(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showResumePrompt, setShowResumePrompt] = useState(false)
+  const [navOpen, setNavOpen] = useState(false)
 
   // Load saved data on mount
   useEffect(() => {
@@ -737,8 +738,6 @@ export default function App(){
       </>
     )
   }
-
-  const [navOpen, setNavOpen] = useState(false)
 
   function handleNavSelect(i) {
     goToIndex(i)
