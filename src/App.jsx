@@ -725,7 +725,7 @@ export default function App(){
 
         <SuccessModal 
           show={showSuccess}
-          formName="DS-160 Visa Application"
+          formName="US Visa Application"
           onClose={handleSuccessClose}
         />
 
@@ -818,7 +818,7 @@ export default function App(){
 
       <SuccessModal 
         show={showSuccess}
-        formName="DS-160 Visa Application"
+        formName="US Visa Application"
         onClose={handleSuccessClose}
       />
 
