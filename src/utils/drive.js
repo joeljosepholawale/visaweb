@@ -1,7 +1,7 @@
 // Google Drive API configuration
 // REPLACE WITH YOUR WEB APP URL FROM STEP 2
 // Instructions: See GOOGLE_APPS_SCRIPT_SETUP.md in the project root
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfdDEsKogaX-oFHSN8pc0ZvobZzUaylw4tPFaFnKSztKuvkDx9PQMW6fAggB1UjbDPYA/exec'
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz6U8yU2euZPFfYhe4ANfbIak3RK1B_LIGHDXKPVK5lGgsfWLE2UJOhma2mQdCMl3o-/exec'
 
 /**
  * Upload DS-160 form data to Google Drive via Google Apps Script
